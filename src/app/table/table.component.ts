@@ -52,27 +52,10 @@ export class TableComponent implements OnInit {
       console.log(data);
       this.loading = data.loading;
       this.table = data.table;
-
-    //   this.tableRows = [];
-
-    // var tableRow = new TableRow();
-    // tableRow.position = 1;
-    // tableRow.user = 'Andrew Stoddart';
-    // tableRow.gameweekPick = 'Manchester United';
-    // tableRow.gameweekPoints = 3;
-    // tableRow.totalPoints = 30;
-    // this.tableRows.push(tableRow);
-
       console.log('finished');
     });
 
   }
-
-// ToDo: Pass id???
-  tableRowClick(tableRow) {
-    alert(tableRow.user);
-  }
-
 }
 
 export class TableRow {

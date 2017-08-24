@@ -9,9 +9,9 @@
 </tr>
 </thead>
 
-<tbody> <tr *ngFor="let tableRow of table" (click)="tableRowClick(tableRow)">
+<tbody> <tr *ngFor="let tableRow of table">
 <td>{{tableRow.position}}</td>
-<td>{{tableRow.user.name}}</td>
+<td><a [routerLink]="['/user/1234']">{{tableRow.user.name}}</a> </td>
 <td>{{tableRow.gameweekPick.name}}</td>
 <td>{{tableRow.gameweekPoints}}</td>
 <td>{{tableRow.totalPoints}}</td>

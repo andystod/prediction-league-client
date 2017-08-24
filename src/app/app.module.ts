@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TableComponent } from './table/table.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UserComponent } from './user/user.component';
 
 // by default, this client will send queries to `/graphql` (relative to the URL of your app)
 const client = new ApolloClient({
@@ -33,7 +34,7 @@ export function provideClient(): ApolloClient {
     routes,
     NgbModule.forRoot()
   ],
-  declarations: [ AppComponent, HomeComponent, TableComponent, NavbarComponent ],
+  declarations: [ AppComponent, HomeComponent, TableComponent, NavbarComponent, UserComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
