@@ -11,7 +11,7 @@
 
 <tbody> <tr *ngFor="let tableRow of table">
 <td>{{tableRow.position}}</td>
-<td><a [routerLink]="['/user/1234']">{{tableRow.user.name}}</a> </td>
+<td><a routerLink="/user/{{tableRow.id}}">{{tableRow.user.name}}</a> </td>
 <td>{{tableRow.gameweekPick.name}}</td>
 <td>{{tableRow.gameweekPoints}}</td>
 <td>{{tableRow.totalPoints}}</td>

@@ -3,7 +3,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
 // We use the gql tag to parse our query string into a query document
-const CurrentUserForProfile = gql`
+const TableQuery = gql`
   query TableQuery {
     table {
       id,
@@ -37,7 +37,6 @@ interface QueryResponse{
 export class TableComponent implements OnInit {
   loading: boolean;
   table: any;
-  tableRows: Array<TableRow>;
 
   constructor(private apollo: Apollo) { }
 
@@ -47,7 +46,7 @@ export class TableComponent implements OnInit {
     console.log('here');
 
     this.apollo.watchQuery<QueryResponse>({
-      query: CurrentUserForProfile
+      query: TableQuery
     }).subscribe(({data}) => {
       console.log(data);
       this.loading = data.loading;
@@ -58,10 +57,3 @@ export class TableComponent implements OnInit {
   }
 }
 
-export class TableRow {
-  position: number;
-  user: string;
-  gameweekPick: string;
-  gameweekPoints: number;
-  totalPoints: number; 
-}

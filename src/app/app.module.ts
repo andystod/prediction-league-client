@@ -17,7 +17,7 @@ import { UserComponent } from './user/user.component';
 // by default, this client will send queries to `/graphql` (relative to the URL of your app)
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: 'http://localhost:4000/graphql'
+    uri: 'http://127.0.0.1:4000/graphql'
   }),
 });
 
