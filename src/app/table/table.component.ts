@@ -10,7 +10,9 @@ const TableQuery = gql`
       user {
         name,
         predictions {
-          name
+          pick {
+            name
+          }
         }
       },
       gameweekPick {

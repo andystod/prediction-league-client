@@ -1,14 +1,21 @@
+<div>
+  {{user.name}}'s Predictions
+</div>
+
 <table class="table table-striped table-hover">
 <thead>
 <tr>
-  <th>Predictions</th> 
+  <th>Home</th>
+  <th>Score</th>
+  <th>Away</th>
+  <th>Points</th> 
 </tr>
 </thead>
 
 <tbody> <tr *ngFor="let prediction of user.predictions">
-<td>{{prediction.match.home.name}}</td>
+<td class='team' [ngClass]="{ pick: prediction.match.home.name === prediction.pick.name }">{{prediction.match.home.name}}</td>
 <td>{{prediction.match.score.home}} - {{prediction.match.score.away}}</td>
-<td>{{prediction.match.away.name}}</td>
+<td class='team' [ngClass]="{ pick: prediction.match.away.name === prediction.pick.name }">{{prediction.match.away.name}}</td>
 <td>{{prediction.points}}</td>
 </tr>
 </tbody>
