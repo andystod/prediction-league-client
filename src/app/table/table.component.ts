@@ -4,29 +4,26 @@ import gql from 'graphql-tag';
 
 // We use the gql tag to parse our query string into a query document
 const TableQuery = gql`
-  query TableQuery {
-    table {
-      id,
-      user {
-        name,
-        predictions {
-          pick {
-            name
-          }
-        }
-      },
-      gameweekPick {
-        name
-      },
-      gameweekPoints,
-      totalPoints,
-      position
-    }
-  }
+query TableQuery {
+  leagueTable {
+   id,
+   entries {
+     id,
+     user {
+       name
+     },
+     gameweekPick,
+     gameweekPoints,
+     nextGameweekPick,
+     totalPoints,
+     leaguePosition
+   },
+ }
+}
 `;
 
 interface QueryResponse{
-  table
+  leagueTable
   loading
 }
 
@@ -52,7 +49,9 @@ export class TableComponent implements OnInit {
     }).subscribe(({data}) => {
       console.log(data);
       this.loading = data.loading;
-      this.table = data.table;
+      this.table = data.leagueTable;
+      console.log(this.table);
+      console.log(this.table.entries);
       console.log('finished');
     });
 

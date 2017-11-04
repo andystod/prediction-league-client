@@ -13,14 +13,16 @@ import { HomeComponent } from './home/home.component';
 import { TableComponent } from './table/table.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserComponent } from './user/user.component';
+import { environment } from "../environments/environment";
 
 // by default, this client will send queries to `/graphql` (relative to the URL of your app)
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: 'http://127.0.0.1:4000/graphql'
+    uri: environment.graphqlURL
   }),
 });
 
+// "http://localhost:8080/graphql"
 
 export function provideClient(): ApolloClient {
   return client;
@@ -39,7 +41,7 @@ export function provideClient(): ApolloClient {
 })
 export class AppModule {}
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+// platformBrowserDynamic().bootstrapModule(AppModule);
 
 // @NgModule({
 //   declarations: [

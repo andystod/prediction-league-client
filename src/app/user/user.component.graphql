@@ -1,0 +1,22 @@
+query Entry($id: String) {
+  entry(id: $id) {
+    user {
+      name
+    }
+    leaguePosition,
+    totalPoints,
+    gameweekPoints,
+    predictions {
+      match {
+        home
+        away
+        score {
+          home
+          away
+        }
+      }
+      pick
+      points
+    }
+  }
+}
